@@ -1,4 +1,4 @@
-const { Genre, validate } = require("../models/genres");
+const { Genre, validate: validateGenre } = require("../models/genre");
 const express = require("express");
 const router = express.Router();
 
@@ -18,7 +18,7 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { error } = validate(req.body);
+  const { error } = validateGenre(req.body);
   if (error) return res.send(error.details[0].message);
 
   let genre = new Genre({
@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
-  const { error } = validate(req.body);
+  const { error } = validateGenre(req.body);
   if (error) return res.send(error.details[0].message);
 
   const genre = await Genre.findByIdAndUpdate(
