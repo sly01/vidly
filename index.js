@@ -1,7 +1,8 @@
-const error = require('./middleware/error');
-const config = require('config');
-const Joi = require('joi');
-Joi.objectId = require('joi-objectid')(Joi);
+require("express-async-errors");
+const error = require("./middleware/error");
+const config = require("config");
+const Joi = require("joi");
+Joi.objectId = require("joi-objectid")(Joi);
 const mongoose = require("mongoose");
 const logger = require("./logger");
 const helmet = require("helmet");
@@ -15,7 +16,7 @@ const users = require("./routes/users");
 const auth = require("./routes/auth");
 const app = express();
 
-if (!config.get('jwtPrivateKey')) {
+if (!config.get("jwtPrivateKey")) {
   console.error("FATAL ERROR: jwtPrivateKey is not defined.");
   process.exit(1);
 }
@@ -38,9 +39,9 @@ app.use(logger);
 app.use("/api/genres", genres);
 app.use("/api/customers", customers);
 app.use("/api/movies", movies);
-app.use('/api/rentals', rentals);
-app.use('/api/users', users);
-app.use('/api/auth', auth);
+app.use("/api/rentals", rentals);
+app.use("/api/users", users);
+app.use("/api/auth", auth);
 app.use(error);
 
 const port = process.env.PORT || 3000;
