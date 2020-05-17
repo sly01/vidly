@@ -14,3 +14,7 @@
 {"level":"info","message":"Connected to MongoDB...","timestamp":"2020-05-17T10:23:14.706Z"}
 {"message":"failed to reconnect after 30 attempts with interval 1000 ms","name":"MongoNetworkError","stack":"MongoNetworkError: failed to reconnect after 30 attempts with interval 1000 ms\n    at Connection.<anonymous> (/Users/aerkoc/code/node-course/vidly/node_modules/mongodb-core/lib/connection/pool.js:373:13)\n    at Connection.emit (events.js:304:20)\n    at Socket.<anonymous> (/Users/aerkoc/code/node-course/vidly/node_modules/mongodb-core/lib/connection/connection.js:245:50)\n    at Object.onceWrapper (events.js:411:26)\n    at Socket.emit (events.js:304:20)\n    at emitErrorNT (internal/streams/destroy.js:84:8)\n    at processTicksAndRejections (internal/process/task_queues.js:84:21)","level":"error","timestamp":"2020-05-17T10:24:11.730Z"}
 {"level":"info","message":"Connected to MongoDB...","timestamp":"2020-05-17T10:27:08.092Z"}
+{"level":"info","message":"Connected to MongoDB...","timestamp":"2020-05-17T10:28:21.424Z"}
+{"level":"info","message":"Connected to MongoDB...","timestamp":"2020-05-17T10:29:07.697Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2020-05-17T10:30:45.899Z"}
+{"level":"info","message":"Connected to MongoDB...","timestamp":"2020-05-17T10:30:45.923Z"}
