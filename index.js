@@ -18,11 +18,23 @@ const users = require("./routes/users");
 const auth = require("./routes/auth");
 const app = express();
 
+winston.handleExceptions(
+  new winston.transports.File({ filename: "uncaughtExceptions.log" })
+);
+
+process.on("unhandledRejection", (ex) => {
+  throw ex;
+});
+
 winston.add(winston.transports.File, { filename: "logfile.log" });
 winston.add(winston.transports.MongoDB, {
   db: "mongodb://localhost/vidly",
   level: "info",
 });
+
+// throw new Error("Something failed during startup.");
+// const p = Promise.reject(new Error("Something failed miserably!"));
+// p.then(() => console.log("Done"));
 
 if (!config.get("jwtPrivateKey")) {
   console.error("FATAL ERROR: jwtPrivateKey is not defined.");
